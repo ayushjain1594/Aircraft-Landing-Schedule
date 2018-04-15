@@ -14,12 +14,18 @@ Two cases-
 
 ## Model
 
-[1] Static Case-
+### Static Case Single Runway-
 
-Mixed integer programming models have been developed for static case with single and multiple runways. 
-In the static case, all the data is predetermined and does not change over time. The objective is to minize the penalty associated with diversion of landing times from target time. The constraints include clearance time between landings, earliest landing time, latest landing time for single runway.
+Mixed integer programming model has been developed for static case with single runway. 
+In the static case, all the data is predetermined and does not change over time. The piecewise linear objective is to minimize the penalty associated with diversion of landing times from target times. The constraints include clearance time between landings, earliest landing time, latest landing time for single runway. The formulation is as follows-
 
 ![alt text](static_case_1_runway/model.jpg)
+
+### Static Case Multi Runway-
+
+Multi Runway Static case is very similar to that of single runway with few more varibles. The formulation is as follows-
+
+![alt text](static_case_multi_runway/model.jpg)
 
 ## Data Format
 
