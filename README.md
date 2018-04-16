@@ -23,9 +23,24 @@ In the static case, all the data is predetermined and does not change over time.
 
 ### Static Case Multi Runway-
 
-Multi Runway Static case is very similar to that of single runway with few more varibles. The formulation is as follows-
+Multi Runway Static case is very similar to that of single runway with few more variables. The formulation is as follows-
 
 ![alt text](static_case_multi_runway/model.jpg)
+
+### Dynamic Case Single Runway-
+
+In the dynamic case, the flights are scheduled to land as they appear. Therefore, the scheduling models are solved everytime a flight appears. The approach has been taken from the work of [*Beasley et al*](https://www.jstor.org/stable/4101827?seq=1#page_scan_tab_contents). In their work, they consider sets F0, F1 and F2. F0 is set of aircrafts that have not yet appeared. F1 is set of aircrafts that have appreared but have not yet landed or had their landing time frozen. F2 is set of aircrafts that have landed or have had their landing time frozen.
+
+Now, in order to penalize much perturbation in the previous decision whenever new decision is made, a decision variable D(X,x) is formulated to quantify perturbation where X is previous decision and x is the new decision.
+
+The formulation of the dynamic scheduling is as follows-
+
+![alt text](dynamic_case_1_runway/model.JPG)
+
+The methodology is as follows-
+
+![alt text](dynamic_case_1_runway/Methodology.jpg)
+
 
 ## Data Format
 
@@ -39,8 +54,7 @@ for each plane i (i=1,...,p):
           latest landing time, penalty cost per unit of time for landing before target, 
           penalty cost per unit of time for landing after target
    
-          for each plane j (j=1,...p): separation time required after 
-                                i lands before j can land
+          for each plane j (j=1,...p): separation time required after i lands before j can land
 ```
 
 Data reference- [OR-Library by J.E. Beasley](http://people.brunel.ac.uk/~mastjjb/jeb/info.html)
